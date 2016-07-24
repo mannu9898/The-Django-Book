@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="TRADE is a website where people can trade their commodities which they own for other people's commodities or an amount money">
+	<meta name="keywords" content="trade, trading, the, project, brainchild, theprojectbrainchild, commodity, commodities">
+	<meta name="author" content="Shashank Kumar">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homepage | Trade by theprojectbrainchild</title>
+
+	<!--Style Files Inclusion-->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/animate.css">
+
+	<!--Script Files Inclusion-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="indexscript.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" ng-app="homePage">
+
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #581845">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Trade</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#logsign">LOGIN/SIGNUP</a></li>
+        <li><a href="#team">OUR TEAM</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center" ng-controller="subscribe"  style="background-color: #581845; margin-bottom:0px;">
+  <h1>Trade</h1> 
+  <p>Get A Commodity For Your Own Commodity Or Money</p>
+  <div class="width:200px; margin:auto;">
+  	<h3 id="pdate">Production Day : 3</h3>
+  </div>
+  <p>We're updating our website by adding new functionalities almost every day. So, make sure to subscribe.</p>
+  <form class="form-inline" ng-submit="onSub();">
+    <input type="email" class="form-control" size="50" placeholder="Email Address" required ng-model="subEmail">
+    <button type="submit" class="btn btn-danger">Subscribe</button>
+  </form>
+  <span>{{subMsg}}<br>
+  {{subMsg2}}</span>
+  
+  <!--<div ng-hide="true" class="panel panel-default" style="width: 60%; margin: auto; text-align: center;border: 2px solid black; box-shadow: 10px 10px 10px black;">
+    <div class="panel-heading" style=" color:white;">{{subMsg}}</div>
+    <div class="panel-body" style=" color:black;align:center">{{subMsg2}}</div>
+  </div>-->
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid" style="background-color: white; margin-top:0px; color:black; ">
+<div style=" margin: auto; text-align: center">
+ 	<h1>About The Project Brainchild</h1>
+<hr>We are a group of tech enthusiast working working together to make our ideas into reality.<br>
+</div>
+</div>
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>OUR WORKFORCE</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>POWER</h4>
+      <p>Our inspiration is and always has been the ongoing scope of technology.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>LOVE</h4>
+      <p>We work full heartedly to provide better service through our website.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>JOB DONE</h4>
+      <p>Our word is our ultimate contract.</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>GREEN</h4>
+      <p>We support environment friendly practices and adhere every motion that supports it.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>LEARNING PROCESS</h4>
+      <p>We learn as we work and move ahead towards a better service that we can provide.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>That's the key how we have set up a website or any other of our project in considerably short time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Login/SignUp Section) -->
+<div id="logsign" class="container-fluid">
+<div class="row">
+  <div class="col-sm-6" style="width: 50%" ng-controller="signin">
+		<form class="form" role="form" ng-submit="onSignIN();">
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2 style="color:white;">Log In</h2>
+			</div>
+			<label for="smail" style="margin-top: 50px">Email ID</label>
+			<br/>
+			<input class="form-control" style="width: 80%; margin: auto;" type="email" id="lemail" ng-model="lEmail" required>
+			<span style="color:red">{{error2}}</span>
+      <br/>
+			<label for="lpassword">Password</label>
+			<br/>
+			<input class="form-control" style="width: 80%; margin: auto;" type="password" id="lpassword" ng-model="lPass" required>
+			<br/>
+			<button type="submit">Sign In</button>
+			<br/>
+			<a href="#"><p class="small">Forgot your password?</p></a>
+		</div>
+		</form>
+  </div>
+  
+  <div class="col-sm-6" style="width: 50%" ng-controller="signup">
+		<form class="form" role="form" ng-submit="onSignUP();">
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2 style="color:white;">Sign Up</h2>
+			</div>
+			<label for="sname" style="margin-top: 20px">Full Name</label>
+			<br/>
+			<input class="form-control" style="width: 80%; margin: auto;" ng-model="suName" type="name" id="sname" required>
+			<br/>
+			<label for="smail">Email ID</label>
+			<br/>
+			<input class="form-control" style="width: 80%; margin: auto;" ng-model="suEmail" type="email" id="smail" required>
+      <span style="color:red">{{error}}</span>
+			<br/>
+			<label for="spassword">Password</label>
+			<br/>
+			<input class="form-control" style="width: 80%; margin: auto;" ng-model="suPass" type="password" id="spassword" required>
+			<br/>
+			<button class="btn btn-default" type="submit">Sign Up</button>
+		</div>
+		</form>
+  </div>
+</div>
+</div>
+
+<!-- Container (Team Section) -->
+<div id="team" class="container-fluid bg-grey">
+  <h2 class="text-center">OUR TEAM</h2>
+  
+</div>
+
+<!--FOOTER-->
+<footer class="container-fluid text-center" style="background-color: #f4511e; color: white;">
+  <a href="#myPage" title="To Top">
+    <span style="color: white;" class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>For Support Email Us At support.trade@theprojectbrainchild.com</p>
+</footer>
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+<script>
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+	$('#password').focus(function() {
+		$('label[for="password"]').addClass('selected');
+	});
+	$('#password').blur(function() {
+		$('label[for="password"]').removeClass('selected');
+	});
+</script>
+
+	<!--<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">-->
+</body>
+</html>

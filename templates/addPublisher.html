@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact us
+{% endblock %}
+
+{% block content %}
+
+<body>
+	<h1>ADD Publisher</h1>{% csrf_token %}
+	<form action="." method="POST">
+		<table>
+			{{ form.as_table }}
+		</table>
+		<p><input type="submit" value="Submit"></p>
+	</form>
+</body>
+
+{% endblock %}
+
+
+

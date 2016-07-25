@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^$',home),
     url(r'^search/$',search),
     url(r'^contact/$',contact),
-    url(r'^add/$',add_publisher)
+    url(r'^add/$',add_publisher),
+    url(r'^book/$',print_book)
     ]
 

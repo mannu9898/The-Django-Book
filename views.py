@@ -2,7 +2,7 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 from django.shortcuts import render_to_response
-from books.views import search,contact,add_publisher
+from books.views import search,contact,add_publisher,print_book
 
 
 def current_datetime(request):

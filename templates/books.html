@@ -1,0 +1,10 @@
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for book in books %}
+    <div>
+        <h1><a href="">{{ book.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}

@@ -70,3 +70,8 @@ def add_publisher(request):
 			return render_to_response('addPublisher.html', {'form': form})
 	else:
 		return render_to_response("addPublisher.html", {"Error":'Not valid username'})
+
+
+def print_book(request):
+	books = Book.objects.all()
+	render_to_response("books.html",{'books':books})
